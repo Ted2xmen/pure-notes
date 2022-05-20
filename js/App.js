@@ -1,5 +1,5 @@
-import NotesAPI from "./NotesAPI.js";
 import NotesView from "./NotesView.js";
+import NotesAPI from "./NotesAPI.js";
 
 export default class App {
   constructor(root) {
@@ -39,22 +39,23 @@ export default class App {
       },
       onNoteAdd: () => {
         const newNote = {
-          title: "new note",
-          body: "take note...",
+          title: "New Note",
+          body: "Take note...",
         };
+
         NotesAPI.saveNote(newNote);
         this._refreshNotes();
       },
       onNoteEdit: (title, body) => {
         NotesAPI.saveNote({
           id: this.activeNote.id,
-          title: title,
-          body: body,
+          title,
+          body,
         });
 
         this._refreshNotes();
       },
-      onNoteEdit: (noteId) => {
+      onNoteDelete: (noteId) => {
         NotesAPI.deleteNote(noteId);
         this._refreshNotes();
       },

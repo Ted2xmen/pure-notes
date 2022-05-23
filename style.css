@@ -13,12 +13,21 @@ body {
     font-family: sans-serif;
 }
 
-.notes__sidebar {
-    border-right: 2px solid #dddddd;
+
+.menu__sidebar {
+    border-right: 2px solid #918d8d;
     flex-shrink: 0;
     overflow-y: auto;
     padding: 1em;
-    width: 400px;
+    width: 15px;
+}
+
+.notes__sidebar {
+    border-right: 2px solid #918d8d;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 1em;
+    width: 330px;
 }
 
 .notes__add {

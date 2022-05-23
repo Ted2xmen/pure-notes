@@ -9,13 +9,13 @@ export default class NotesView {
     this.onNoteEdit = onNoteEdit;
     this.onNoteDelete = onNoteDelete;
     this.root.innerHTML = `
-            <div class="notes__sidebar">
-                <button class="notes__add" type="button">Add Note</button>
+            <div class="notes__sidebar space-y-4">
+                <button class="notes__add font-bold rounded-lg w-full h-20 bg-green-600 hover:bg-green-700 hover:text-white" type="button">Add Note</button>
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
-                <input class="notes__title" type="text" placeholder="New Note...">
-                <textarea class="notes__body">Take Note...</textarea>
+                <input class="notes__title text-slate-200 px-2 pt-1 truncate bg-slate-900 rounded-md" type="text" placeholder="Add title...">
+                <textarea class="notes__body  text-slate-100 font-thin p-3 bg-slate-900 rounded-md">Take Note...</textarea>
             </div>
         `;
 
@@ -43,13 +43,13 @@ export default class NotesView {
     const MAX_BODY_LENGTH = 60;
 
     return `
-            <div class="notes__list-item" data-note-id="${id}">
-                <div class="notes__small-title">${title}</div>
-                <div class="notes__small-body">
+            <div class="notes__list-item border shadow border-green-700 rounded-lg text-slate-200 my-4" data-note-id="${id}">
+                <div class="text-xl truncate p-2">${title}</div>
+                <div class="notes__small-body p-1 truncate text-xs ">
                     ${body.substring(0, MAX_BODY_LENGTH)}
                     ${body.length > MAX_BODY_LENGTH ? "..." : ""}
                 </div>
-                <div class="notes__small-updated">
+                <div class="notes__small-updated  text-slate-400 font-thin text-sm text-right">
                     ${updated.toLocaleString(undefined, {
                       dateStyle: "full",
                       timeStyle: "short",

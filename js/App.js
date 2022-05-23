@@ -1,5 +1,5 @@
-import NotesView from "./NotesView.js";
 import NotesAPI from "./NotesAPI.js";
+import NotesView from "./NotesView.js";
 
 export default class App {
   constructor(root) {
@@ -39,18 +39,17 @@ export default class App {
       },
       onNoteAdd: () => {
         const newNote = {
-          title: "New Note",
-          body: "Take note...",
+          title: "",
+          body: "",
         };
-
         NotesAPI.saveNote(newNote);
         this._refreshNotes();
       },
       onNoteEdit: (title, body) => {
         NotesAPI.saveNote({
           id: this.activeNote.id,
-          title,
-          body,
+          title: title,
+          body: body,
         });
 
         this._refreshNotes();
